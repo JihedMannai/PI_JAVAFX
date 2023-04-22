@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="584.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.InterfacebackController">
+   <children>
+      <AnchorPane prefHeight="584.0" prefWidth="669.0" style="-fx-background-color: grey;">
+         <children>
+            <Pane fx:id="pn_listclub" prefHeight="584.0" prefWidth="669.0" style="-fx-background-color: grey;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="52.0" prefWidth="192.0" text="Liste clubs">
+                     <font>
+                        <Font name="System Bold" size="31.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tableclub" layoutX="14.0" layoutY="73.0" prefHeight="410.0" prefWidth="613.0">
+                    <columns>
+                      <TableColumn fx:id="col_id_club" prefWidth="174.0" text="ID" />
+                      <TableColumn fx:id="col_name_club" prefWidth="130.0" text="Name" />
+                        <TableColumn fx:id="col_location_club" prefWidth="147.0" text="Location" />
+                        <TableColumn fx:id="col_option_club" prefWidth="159.0" text="Option" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Pane fx:id="pn_listtterain" prefHeight="584.0" prefWidth="669.0" style="-fx-background-color: grey;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="52.0" prefWidth="192.0" text="Liste terains">
+                     <font>
+                        <Font name="System Bold" size="31.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tabletrain" layoutX="28.0" layoutY="95.0" prefHeight="410.0" prefWidth="613.0">
+                     <columns>
+                        <TableColumn fx:id="col_id_train" prefWidth="174.0" text="ID" />
+                        <TableColumn fx:id="col_type_train" prefWidth="130.0" text="Type" />
+                        <TableColumn fx:id="col_option_train" prefWidth="159.0" text="Option" />
+                     </columns>
+                  </TableView>
+               </children>
+            </Pane>
+            <Pane fx:id="pn_modifiertrain" prefHeight="584.0" prefWidth="669.0" style="-fx-background-color: grey;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="52.0" prefWidth="295.0" text="Modifier terrain">
+                     <font>
+                        <Font name="System Bold" size="31.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="161.0" prefHeight="21.0" prefWidth="102.0" text="Type :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="448.0" layoutY="441.0" mnemonicParsing="false" onAction="#btn_modifier_terrain" prefHeight="31.0" prefWidth="171.0" text="Modifier" />
+                  <TextField fx:id="tf_type_terrain1" layoutX="150.0" layoutY="145.0" prefHeight="64.0" prefWidth="236.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="pn_modifierclub" layoutX="5.0" prefHeight="584.0" prefWidth="669.0" style="-fx-background-color: grey;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="52.0" prefWidth="236.0" text="Modifier club">
+                     <font>
+                        <Font name="System Bold" size="31.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="161.0" prefHeight="21.0" prefWidth="102.0" text="Name :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="256.0" prefHeight="21.0" prefWidth="102.0" text="Location :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="448.0" layoutY="441.0" mnemonicParsing="false" onAction="#btn_modifier_club" prefHeight="31.0" prefWidth="171.0" text="Modifier" />
+                  <TextField fx:id="tf_name_club1" layoutX="150.0" layoutY="145.0" prefHeight="64.0" prefWidth="236.0" />
+                  <TextField fx:id="tf_location_club1" layoutX="151.0" layoutY="240.0" prefHeight="64.0" prefWidth="236.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="pn_ajouterclub" prefHeight="584.0" prefWidth="669.0" style="-fx-background-color: grey;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="52.0" prefWidth="192.0" text="Ajouter club">
+                     <font>
+                        <Font name="System Bold" size="31.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="161.0" prefHeight="21.0" prefWidth="102.0" text="Name :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="256.0" prefHeight="21.0" prefWidth="102.0" text="Location :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="448.0" layoutY="441.0" mnemonicParsing="false" onAction="#btn_ajouter_club" prefHeight="31.0" prefWidth="171.0" text="Ajouter" />
+                  <TextField fx:id="tf_name_club" layoutX="150.0" layoutY="145.0" prefHeight="64.0" prefWidth="236.0" />
+                  <TextField fx:id="tf_location_club" layoutX="151.0" layoutY="240.0" prefHeight="64.0" prefWidth="236.0" />
+                  <Label layoutX="41.0" layoutY="350.0" prefHeight="21.0" prefWidth="102.0" text="ID terrain :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tf_idterrain_club" layoutX="153.0" layoutY="334.0" prefHeight="64.0" prefWidth="236.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="pn_ajouterterrain" layoutX="9.0" layoutY="2.0" prefHeight="584.0" prefWidth="669.0" style="-fx-background-color: grey;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="52.0" prefWidth="192.0" text="Ajouter club">
+                     <font>
+                        <Font name="System Bold" size="31.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="161.0" prefHeight="21.0" prefWidth="102.0" text="Name :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="256.0" prefHeight="21.0" prefWidth="102.0" text="Location :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="448.0" layoutY="441.0" mnemonicParsing="false" onAction="#btn_ajouter_club" prefHeight="31.0" prefWidth="171.0" text="Ajouter" />
+                  <TextField fx:id="tf_name_club2" layoutX="150.0" layoutY="145.0" prefHeight="64.0" prefWidth="236.0" />
+                  <TextField fx:id="tf_location_club2" layoutX="151.0" layoutY="240.0" prefHeight="64.0" prefWidth="236.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="pn_ajouterterrain1" prefHeight="584.0" prefWidth="669.0" style="-fx-background-color: grey;">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" prefHeight="52.0" prefWidth="295.0" text="Ajouter terrain">
+                     <font>
+                        <Font name="System Bold" size="31.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="161.0" prefHeight="21.0" prefWidth="102.0" text="Type :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="448.0" layoutY="441.0" mnemonicParsing="false" onAction="#btn_ajouter_terrain" prefHeight="31.0" prefWidth="171.0" text="Ajouter" />
+                  <TextField fx:id="tf_type_terrain" layoutX="150.0" layoutY="145.0" prefHeight="64.0" prefWidth="236.0" />
+                  <Label layoutX="41.0" layoutY="238.0" prefHeight="21.0" prefWidth="102.0" text="Photo :">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tf_photo_terrain" layoutX="150.0" layoutY="222.0" prefHeight="64.0" prefWidth="236.0" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="669.0" prefHeight="586.0" prefWidth="171.0" style="-fx-background-color: #A12D03;">
+         <children>
+            <Button layoutX="5.0" layoutY="183.0" mnemonicParsing="false" onAction="#btn_ajouterclub" prefHeight="31.0" prefWidth="149.0" style="-fx-alignment: left; -fx-background-color: #A12D03;" text="Ajouter club" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
+            <Button layoutX="5.0" layoutY="238.0" mnemonicParsing="false" onAction="#btn_listclub" prefHeight="31.0" prefWidth="149.0" style="-fx-alignment: left; -fx-background-color: #A12D03;" text="List clubs" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
+            <Button layoutX="5.0" layoutY="294.0" mnemonicParsing="false" onAction="#btn_listterain" prefHeight="31.0" prefWidth="149.0" style="-fx-alignment: left; -fx-background-color: #A12D03;" text="List terains" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
+            <Button layoutX="5.0" layoutY="133.0" mnemonicParsing="false" onAction="#btn_ajouterterrain" prefHeight="31.0" prefWidth="149.0" style="-fx-alignment: left; -fx-background-color: #A12D03;" text="Ajouter terrain" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

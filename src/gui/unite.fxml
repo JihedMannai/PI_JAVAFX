@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="150.0" prefWidth="400.0" style="-fx-background-color: black;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gui.UniteController">
+   <children>
+      <Label fx:id="tf_nomclub" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="79.0" text="Nom club" textFill="#d04a1d">
+         <font>
+            <Font name="Segoe UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="tf_locationclub" layoutX="14.0" layoutY="36.0" prefHeight="17.0" prefWidth="143.0" text="Location" textFill="#d3c9c6">
+         <font>
+            <Font name="Segoe UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="tf_typeterrain" layoutX="14.0" layoutY="118.0" prefHeight="17.0" prefWidth="143.0" text="Type : " textFill="#d3c9c6">
+         <font>
+            <Font name="Segoe UI Bold" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagev" fitHeight="150.0" fitWidth="200.0" layoutX="108.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

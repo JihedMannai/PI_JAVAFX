@@ -29,7 +29,7 @@ public class main extends Application
     public void start(Stage primaryStage) throws IOException
     {
         this.stg = primaryStage;
-        FXMLLoader loader= new FXMLLoader(getClass().getResource("../gui/interface.fxml"));
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("../gui/interfacefront.fxml"));
         Parent root= loader.load();
         Scene scene= new Scene(root);
         primaryStage.setTitle("clubterain");

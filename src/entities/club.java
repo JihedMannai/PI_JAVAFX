@@ -15,7 +15,8 @@ public class club {
     private int terain_id;
     private String name;
     private String location;
-
+    private int rating;
+    
     public club(int id, int agent_id, int terain_id, String name, String location) {
         this.id = id;
         this.agent_id = agent_id;
@@ -46,6 +47,26 @@ public class club {
         this.name = name;
         this.location = location;
         this.terain_id=idt;
+    }
+    
+    public club(int id,String name, String location,int idt,int rating) {
+        this.id=id;
+        this.name = name;
+        this.location = location;
+        this.terain_id=idt;
+        this.rating=rating;
+    }
+
+    public club() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 
     public int getId() {

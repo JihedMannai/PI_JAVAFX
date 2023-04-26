@@ -5,17 +5,24 @@
  */
 package gui;
 
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import entities.SMSSender;
 import entities.club;
 import entities.train;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,6 +31,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -42,6 +50,8 @@ import services.Trainservice;
  * @author amina
  */
 public class InterfacebackController implements Initializable {
+    public static final String ACCOUNT_SID = "AC26099e79db56fd793e742b38716ad6ad";
+    public static final String AUTH_TOKEN = "2a306aca57d75531a19a3a7326789407";
 
     @FXML
     private Pane pn_listclub;
@@ -101,6 +111,8 @@ public class InterfacebackController implements Initializable {
     private TextField tf_idterrain_club;
     @FXML
     private TextField tf_photo_terrain;
+    @FXML
+    private TextField tfrecherche;
     /**
      * Initializes the controller class.
      */
@@ -110,6 +122,7 @@ public class InterfacebackController implements Initializable {
         display();
         display2();
     }    
+
 
     @FXML
     private void btn_ajouterclub(ActionEvent event) {
@@ -159,6 +172,25 @@ public class InterfacebackController implements Initializable {
         int idt = Integer.parseInt(tf_idterrain_club.getText());
         club p = new club(name,location,idt);
         cs.Ajouter(p);
+        String message1 = "Un nouveau club a été ajouté.";
+        cs.notifyUser(message1);
+        
+        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+        Message message = Message.creator(
+               new com.twilio.type.PhoneNumber("whatsapp:+21658049501"),
+               new com.twilio.type.PhoneNumber("whatsapp:+14155238886"),
+                "un nouveau club a été ajouté")
+            .create();
+
+        System.out.println(message.getSid());
+
+
+
+
+             
+              
+
+
         display();
         tf_name_club.clear();
         tf_location_club.clear();
@@ -448,4 +480,32 @@ public class InterfacebackController implements Initializable {
         pn_listtterain.toFront();
         display2();
     }
+   @FXML
+public void recherche() {
+    // Ajouter un listener sur le champ de recherche pour effectuer la recherche à chaque modification du texte
+    tfrecherche.textProperty().addListener((observable, oldValue, newValue) -> {
+        // Filtrer les clubs en utilisant le nouveau texte de recherche
+        Clubservice sp = new Clubservice(); // instancier le service ClubService
+        List<club> clubrecherche = new ArrayList<>(); // créer une liste pour stocker les clubs filtrés
+        try {
+            ResultSet rs = sp.Selectionner(); // obtenir tous les clubs depuis la base de données
+            while (rs.next()) { // boucler sur tous les clubs
+                club club = new club(
+                   rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("location")
+                );
+                if (club.getName().toLowerCase().contains(newValue.toLowerCase())||club.getLocation().toLowerCase().contains(newValue.toLowerCase())) {
+                    clubrecherche.add(club); // ajouter le club à la liste s'il correspond à la recherche
+                }
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        // Mettre à jour la TableView avec les clubs filtrés
+        tableclub.setItems(FXCollections.observableArrayList(clubrecherche));
+    });
+}
+
 }

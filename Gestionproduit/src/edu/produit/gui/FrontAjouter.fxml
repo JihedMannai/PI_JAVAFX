@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.produit.gui.FrontAjouterController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="20.0" layoutY="20.0" prefHeight="688.0" prefWidth="980.0">
+         <children>
+            <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="688.0" prefWidth="980.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <BorderPane fx:id="mainBorderPane" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="970.0" style="-fx-background-color: #eee;" stylesheets="@../../../../../../ancien/PIDEV-3A5-Limitless-GestionCommande/Limitless/src/resources/css/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <left>
+                        <VBox alignment="TOP_CENTER" prefHeight="483.0" prefWidth="120.0" spacing="2.0" style="-fx-background-color: #666;" BorderPane.alignment="TOP_CENTER">
+                           <children>
+                              <Hyperlink alignment="TOP_CENTER" contentDisplay="TOP" maxWidth="1.7976931348623157E308" onAction="#gotoStore" styleClass="navigation-hyperlink" stylesheets="@../../../../../../ancien/PIDEV-3A5-Limitless-GestionCommande/Limitless/src/resources/css/style.css" text="Store" textAlignment="CENTER" textFill="WHITE">
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                                 <graphic>
+                                    <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../../ancien/PIDEV-3A5-Limitless-GestionCommande/Limitless/src/resources/images/icons/ic_store_white_48dp_2x.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Hyperlink>
+                              <Hyperlink alignment="TOP_CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" onAction="#gotoLibrary" styleClass="navigation-hyperlink" stylesheets="@../../../../../../ancien/PIDEV-3A5-Limitless-GestionCommande/Limitless/src/resources/css/style.css" text="Library" textAlignment="CENTER" textFill="WHITE">
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                                 <graphic>
+                                    <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../../ancien/PIDEV-3A5-Limitless-GestionCommande/Limitless/src/resources/images/icons/ic_video_library_white_48dp_2x.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Hyperlink>
+                              <Hyperlink alignment="TOP_CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="33.0" maxWidth="1.7976931348623157E308" onAction="#gotoAccount" styleClass="navigation-hyperlink" stylesheets="@../../../../../../ancien/PIDEV-3A5-Limitless-GestionCommande/Limitless/src/resources/css/style.css" text="Account" textAlignment="CENTER" textFill="WHITE">
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                                 <graphic>
+                                    <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../../ancien/PIDEV-3A5-Limitless-GestionCommande/Limitless/src/resources/images/icons/ic_account_box_white_48dp_2x.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Hyperlink>
+                              <Hyperlink fx:id="cartButton" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="56.0" maxWidth="1.7976931348623157E308" onAction="#showCart" style="-fx-border-width: 1 0 1 0;" styleClass="navigation-hyperlink" stylesheets="@../../../../../../ancien/PIDEV-3A5-Limitless-GestionCommande/Limitless/src/resources/css/style.css" text="Cart" textAlignment="CENTER" textFill="WHITE">
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                                 <graphic>
+                                    <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../../../../ancien/PIDEV-3A5-Limitless-GestionCommande/Limitless/src/resources/images/icons/ic_shopping_cart_white_48dp_2x.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="DEFAULT" />
+                                 </cursor>
+                              </Hyperlink>
+                           </children>
+                        </VBox>
+                     </left>
+                     <top>
+                        <HBox alignment="CENTER_LEFT" prefHeight="110.0" prefWidth="960.0" spacing="8.0" style="-fx-background-color: #555;" BorderPane.alignment="CENTER">
+                           <padding>
+                              <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                           </padding>
+                           <children>
+                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../../ancien/PIDEV-3A5-Limitless-GestionCommande/Limitless/src/resources/images/logo.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Limitless" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button mnemonicParsing="false" onAction="#showHelp" styleClass="my-button" text="Help" />
+                              <Button mnemonicParsing="false" onAction="#proccessLogout" styleClass="my-button" text="Logout" />
+                           </children>
+                        </HBox>
+                     </top>
+                     <center>
+                        <ScrollPane prefHeight="442.0" prefWidth="740.0" BorderPane.alignment="CENTER">
+                           <content>
+                              <VBox fx:id="vboxpanier" prefHeight="335.0" prefWidth="549.0">
+                                 <children>
+                                    <GridPane fx:id="productgridpane" prefHeight="426.0" prefWidth="658.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints maxHeight="188.4" minHeight="10.0" prefHeight="101.20001831054688" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="142.79999389648438" minHeight="10.0" prefHeight="91.1999847412109" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="119.60002746582029" minHeight="10.0" prefHeight="112.40001525878904" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                    </GridPane>
+                                 </children></VBox>
+                           </content>
+                        </ScrollPane>
+                     </center>
+                     <right>
+                        <Button fx:id="checkout1" mnemonicParsing="false" onAction="#proccessLogout" styleClass="my-button" text="Checkout" BorderPane.alignment="BOTTOM_LEFT" />
+                     </right>
+                     <bottom>
+                        <Button fx:id="Ajouterproduit" mnemonicParsing="false" onAction="#Ajouterunproduit" text="Ajouter un produit" BorderPane.alignment="CENTER" />
+                     </bottom>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.produit.gui.ProduitstatController">
+   <children>
+      <PieChart fx:id="pie" />
+      <Label fx:id="totalLabel" layoutX="539.0" layoutY="140.0" text="Total" />
+      <Label fx:id="avgLabel" layoutX="530.0" layoutY="270.0" text="Average" />
+      <Label layoutX="530.0" layoutY="114.0" text="Nombre total de produit " />
+      <Label layoutX="538.0" layoutY="247.0" text="Moyenne des prix des produits ajoutes" />
+      <Label layoutX="327.0" layoutY="30.0" text="Statistiques des produits selon les utilisateurs" />
+      <Label layoutX="81.0" layoutY="368.0" text="Nom utilisateur:" />
+   </children>
+</AnchorPane>

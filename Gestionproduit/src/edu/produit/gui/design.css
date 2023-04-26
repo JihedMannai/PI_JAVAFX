@@ -1,0 +1,90 @@
+/* root */
+.root {
+    -fx-background-color: linear-gradient(to bottom, #131022, #1d0909, #c72631);
+    -fx-background-radius :15;
+}
+
+/* button */
+.button
+{
+ -fx-text-fill: #bfb4eb;
+-fx-background-color : #584e7a;
+-fx-background-radius :  30 30 30 30;
+-fx-font-size: 15;
+
+}
+.button:hover
+{
+-fx-text-fill: black;
+-fx-background-color : white ;
+-fx-background-radius :  30 30 30 30;
+
+}
+.button:pressed
+{
+-fx-background-color : #2F2B43 ;
+-fx-background-radius : 30 30 30 30;
+}
+
+
+/* combo box */
+.combo-box
+{
+    -fx-background-color : #141124;
+    -fx-background-radius :30;
+    -fx-border-color:  #515658;
+    -fx-border-radius: 30;
+}
+.combo-box:hover
+{
+    -fx-background-color : #141124;
+    -fx-background-radius :30;
+    -fx-border-color:  black;
+    -fx-border-radius: 30;
+}
+.combo-box:pressed
+{
+    -fx-background-color : #141124;
+    -fx-background-radius :30;
+    -fx-border-color:  black;
+    -fx-border-radius: 30;
+}
+
+
+/* label and text field */
+.label {
+   -fx-font-family: Candara;
+    -fx-text-fill: white;
+    -fx-font-size: 19px;
+   
+}
+#h{
+       -fx-font-family: Candara;
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+}
+.text-field{
+     -fx-text-fill: white;
+    -fx-border-color:white;
+    -fx-background-color: transparent;
+    -fx-border-radius:15;
+}
+/* table view */
+.table-view{
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-border-width: 1px ;
+    -fx-border-style: solid;
+    
+}
+.table-column {
+    -fx-background-color: black;
+    -fx-font-size: 15;
+    -fx-border-color: white;
+    -fx-border-width: 0px 0px 1px 1px;
+    -fx-border-style: solid;
+    
+}
+.table-cell {
+    -fx-text-fill: white;
+}

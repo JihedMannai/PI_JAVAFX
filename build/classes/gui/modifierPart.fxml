@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ModifierPartController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="423.0" prefWidth="587.0">
+         <children>
+            <AnchorPane id="AnchorPane" layoutX="58.0" prefHeight="423.0" prefWidth="539.0">
+               <children>
+                  <AnchorPane id="AnchorPane" layoutX="-4.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="423.0" prefWidth="509.0">
+                     <children>
+                        <DatePicker fx:id="dateModP" layoutX="96.0" layoutY="141.0" />
+                        <Button fx:id="btnmodifP" layoutX="121.0" layoutY="265.0" mnemonicParsing="false" onAction="#ModifP" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: #1AFA01;" text="Save" />
+                        <Button fx:id="btnCloseP" layoutX="269.0" layoutY="265.0" mnemonicParsing="false" onAction="#CloseP" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: #FE4343;" text="Close" />
+                        <TextField fx:id="tuserid" layoutX="305.0" layoutY="141.0" text="users id" />
+                        <TextField fx:id="ttourid" layoutX="192.0" layoutY="197.0" text="tournois id" />
+                     </children>
+                  </AnchorPane>
+                  <Pane layoutX="-3.0" prefHeight="73.0" prefWidth="568.0" style="-fx-background-color: #F0F0EF;">
+                     <children>
+                        <Text fx:id="lblStatus" fill="#942c2c" layoutX="22.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modifier Participant" wrappingWidth="174.000003606081">
+                           <font>
+                              <Font name="Yu Gothic UI Semibold" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="lblstatusMini" fill="#722424" layoutX="71.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home/ajouter">
+                           <font>
+                              <Font name="Yu Gothic UI Semibold" size="12.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="615.0" prefWidth="370.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AjouterTournoisLController">
+   <children>
+      <AnchorPane layoutX="22.0" layoutY="24.0" prefHeight="572.0" prefWidth="319.0" stylesheets="@tournoisfxml.css">
+         <styleClass>
+            <String fx:value="white-form" />
+            <String fx:value="border" />
+         </styleClass>
+         <children>
+            <Label layoutX="16.0" layoutY="14.0" text="Title">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="titleTextField" layoutX="14.0" layoutY="34.0" />
+            <Label layoutX="15.0" layoutY="59.0" text="Type">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="typeTextField" layoutX="14.0" layoutY="79.0" />
+            <Label layoutX="15.0" layoutY="110.0" text="Description">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="descriptionTextField" layoutX="15.0" layoutY="130.0" prefHeight="90.0" prefWidth="217.0" />
+            <Label layoutX="14.0" layoutY="227.0" text="Localisation">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="localisationTextField" layoutX="12.0" layoutY="247.0" />
+            <Label layoutX="12.0" layoutY="276.0" text="Nombre De Place">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="dateTourPicker" layoutX="11.0" layoutY="348.0" prefHeight="25.0" prefWidth="155.0" />
+            <Label layoutX="12.0" layoutY="328.0" text="Date Debut">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="dateFinPicker" layoutX="13.0" layoutY="399.0" prefHeight="25.0" prefWidth="155.0" />
+            <Label layoutX="14.0" layoutY="379.0" text="Date Fin">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="crud_ajouter" layoutX="163.0" layoutY="483.0" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="121.0" styleClass="btn" stylesheets="@tournoisfxml.css" text="Ajouter" />
+            <Button fx:id="crud_close" layoutX="24.0" layoutY="483.0" mnemonicParsing="false" onAction="#close" prefHeight="25.0" prefWidth="119.0" styleClass="btn" stylesheets="@tournoisfxml.css" text="Close" />
+            <Button fx:id="crud_image" layoutX="14.0" layoutY="440.0" mnemonicParsing="false" onAction="#addPicture" prefHeight="25.0" prefWidth="287.0" text="ajouter image" />
+            <TextField fx:id="nbplacetextfield" layoutX="12.0" layoutY="296.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

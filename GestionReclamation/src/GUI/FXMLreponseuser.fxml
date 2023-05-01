@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="792.0" prefWidth="1314.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLreponseuserController">
+   <children>
+      <TableView fx:id="tvreponse" layoutX="207.0" layoutY="101.0" prefHeight="529.0" prefWidth="901.0">
+        <columns>
+          <TableColumn fx:id="tcidres" prefWidth="95.0" text="ID Response" />
+          <TableColumn fx:id="tcidrec" prefWidth="95.0" text="ID Reclamation" />
+          <TableColumn fx:id="tctext" prefWidth="522.0" text="Text" />
+          <TableColumn fx:id="tcdate" prefWidth="188.0" text="Date" />
+        </columns>
+      </TableView>
+      <Button layoutX="1151.0" layoutY="26.0" mnemonicParsing="false" onAction="#retour" text="Retour" />
+   </children>
+</AnchorPane>

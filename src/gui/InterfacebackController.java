@@ -13,6 +13,7 @@ import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import entities.SMSSender;
 import entities.club;
 import entities.train;
+import java.io.File;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,6 +33,7 @@ import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -40,6 +42,8 @@ import javafx.scene.control.TextInputDialog;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import services.Clubservice;
 import services.Trainservice;
@@ -51,7 +55,7 @@ import services.Trainservice;
  */
 public class InterfacebackController implements Initializable {
     public static final String ACCOUNT_SID = "AC26099e79db56fd793e742b38716ad6ad";
-    public static final String AUTH_TOKEN = "2a306aca57d75531a19a3a7326789407";
+    public static final String AUTH_TOKEN = "fa5ba2cb52f03bf7c90b8615613971d0";
 
     @FXML
     private Pane pn_listclub;
@@ -107,18 +111,29 @@ public class InterfacebackController implements Initializable {
     private TextField tf_type_terrain1;
     @FXML
     private Pane pn_ajouterterrain;
-    @FXML
     private TextField tf_idterrain_club;
     @FXML
     private TextField tf_photo_terrain;
     @FXML
     private TextField tfrecherche;
+    @FXML
+    private ComboBox<String> comboboxterrain;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        pn_listclub.toFront();
+        
+        Trainservice ts=new Trainservice();
+        ObservableList<train> tt=FXCollections.observableArrayList();
+        tt=ts.affichage();
+        ObservableList<String>nc=FXCollections.observableArrayList();
+        for(train t:tt){
+            String s=t.getId()+":"+t.getType();
+            nc.add(s);
+        }
+        comboboxterrain.setItems(nc);
+                pn_listclub.toFront();
         display();
         display2();
     }    
@@ -169,20 +184,23 @@ public class InterfacebackController implements Initializable {
         }
         String name = tf_name_club.getText();
         String location = tf_location_club.getText();
-        int idt = Integer.parseInt(tf_idterrain_club.getText());
-        club p = new club(name,location,idt);
+//        int idt = Integer.parseInt(tf_idterrain_club.getText());
+        String ss=comboboxterrain.getValue();
+        int index=ss.indexOf(":");
+        String souschaine=ss.substring(0,index);
+        club p = new club(name,location,Integer.parseInt(souschaine));
         cs.Ajouter(p);
         String message1 = "Un nouveau club a été ajouté.";
         cs.notifyUser(message1);
         
-        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
-        Message message = Message.creator(
-               new com.twilio.type.PhoneNumber("whatsapp:+21658049501"),
-               new com.twilio.type.PhoneNumber("whatsapp:+14155238886"),
-                "un nouveau club a été ajouté")
-            .create();
-
-        System.out.println(message.getSid());
+//        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+//        Message message = Message.creator(
+//               new com.twilio.type.PhoneNumber("whatsapp:+21658049501"),
+//               new com.twilio.type.PhoneNumber("whatsapp:+14155238886"),
+//                "un nouveau club a été ajouté")
+//            .create();
+//
+//        System.out.println(message.getSid());
 
 
 
@@ -362,6 +380,15 @@ public class InterfacebackController implements Initializable {
         String photo = tf_photo_terrain.getText();
         train t = new train(type,photo);
         ts.Ajouter(t);
+        Trainservice ts=new Trainservice();
+        ObservableList<train> ttttttt=FXCollections.observableArrayList();
+        ttttttt=ts.affichage();
+        ObservableList<String>nct=FXCollections.observableArrayList();
+        for(train t22:ttttttt){
+            String s=t22.getId()+":"+t22.getType();
+            nct.add(s);
+        }
+        comboboxterrain.setItems(nct);
         display2();
         tf_type_terrain.clear();
         pn_listtterain.toFront();
@@ -507,5 +534,23 @@ public void recherche() {
         tableclub.setItems(FXCollections.observableArrayList(clubrecherche));
     });
 }
+
+    @FXML
+    private void btn_ajouter_image(ActionEvent event) {
+        
+         final FileChooser fileChooser = new FileChooser(); //outil eli nekhdhou bih el fichier
+        final Stage stage = null;
+
+        File file = fileChooser.showOpenDialog(stage); //halina el fenetre w recuperina el fichier
+        if (file != null) { //ntestiow est ce que fichier null wale
+            //Image image1 = new Image(file.toURI().toString());
+            //addImage.setImage(image1);//badalna el image
+            tf_photo_terrain.setText("/img/"+file.getName()); //badalna el input
+             File selectedFile = file;
+        }
+        
+      
+    }
+
 
 }

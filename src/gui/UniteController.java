@@ -38,6 +38,7 @@ import org.controlsfx.control.Rating;
 import services.Trainservice;
 import utils.MyConnection;
 
+
 /**
  * FXML Controller class
  *

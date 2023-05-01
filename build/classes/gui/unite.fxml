@@ -25,7 +25,7 @@
             <Font name="Segoe UI Bold" size="12.0" />
          </font>
       </Label>
-      <ImageView fx:id="imagev" fitHeight="228.0" fitWidth="251.0" layoutX="243.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imagev" fitHeight="228.0" fitWidth="289.0" layoutX="243.0" pickOnBounds="true" preserveRatio="true" />
       <Rating fx:id="rating" layoutX="14.0" layoutY="182.0" />
       <Label layoutX="14.0" layoutY="152.0" prefHeight="17.0" prefWidth="143.0" text="Note :" textFill="#d3c9c6">
          <font>

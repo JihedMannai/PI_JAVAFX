@@ -14,6 +14,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 
 public class Trainservice implements TService <train>  {
@@ -89,6 +91,25 @@ public class Trainservice implements TService <train>  {
        List<train> list = new ArrayList<>();
 
         return list;
+    }
+    
+    public ObservableList<train> affichage(){
+        ObservableList<train> myList=FXCollections.observableArrayList();
+        try {
+            String sql = "SELECT * FROM terrain";
+            Statement ste = cn.createStatement();
+            ResultSet rs = ste.executeQuery(sql);
+            while (rs.next()) {
+                train c = new train();
+                c.setId(rs.getInt(1));
+                c.setType(rs.getString("type"));
+
+                myList.add(c);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return myList;
     }
     
     

@@ -109,9 +109,10 @@ public class club {
         this.location = location;
     }
 
+
     @Override
     public String toString() {
-        return "club{" + "id=" + id + ", agent_id=" + agent_id + ", terain_id=" + terain_id + ", name=" + name + ", location=" + location + '}';
+        return "club{ name=" + name + ", location=" + location + '}';
     }
     
     
